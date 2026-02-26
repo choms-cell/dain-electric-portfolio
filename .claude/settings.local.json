@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//usr/**)",
+      "Read(//Users/cho/**)",
+      "Bash(source /Users/cho/.nvm/nvm.sh)",
+      "Bash(npm install)",
+      "Bash(npm run dev)"
+    ],
+    "additionalDirectories": [
+      "/Users/cho/Desktop/전기공사사이트/src/app/portfolio"
+    ]
+  }
+}

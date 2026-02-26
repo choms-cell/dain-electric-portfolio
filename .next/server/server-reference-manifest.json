@@ -1,0 +1,36 @@
+{
+  "node": {
+    "11c4c300f44a3a9be7c8bb422e60802b40ff972f": {
+      "workers": {
+        "app/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fcho%2FDesktop%2F%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%80%E1%85%B5%E1%84%80%E1%85%A9%E1%86%BC%E1%84%89%E1%85%A1%E1%84%89%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3%2Fnode_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%2C%5B%22revalidateSyncTags%22%2C%22setPerspectiveCookie%22%5D%5D%2C%5B%22%2FUsers%2Fcho%2FDesktop%2F%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%80%E1%85%B5%E1%84%80%E1%85%A9%E1%86%BC%E1%84%89%E1%85%A1%E1%84%89%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3%2Fnode_modules%2Fnext-sanity%2Fdist%2Fvisual-editing%2Fserver-actions.js%22%2C%5B%22revalidateRootLayout%22%5D%5D%5D&__client_imported__=true!",
+        "app/portfolio/[slug]/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fcho%2FDesktop%2F%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%80%E1%85%B5%E1%84%80%E1%85%A9%E1%86%BC%E1%84%89%E1%85%A1%E1%84%89%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3%2Fnode_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%2C%5B%22revalidateSyncTags%22%2C%22setPerspectiveCookie%22%5D%5D%2C%5B%22%2FUsers%2Fcho%2FDesktop%2F%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%80%E1%85%B5%E1%84%80%E1%85%A9%E1%86%BC%E1%84%89%E1%85%A1%E1%84%89%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3%2Fnode_modules%2Fnext-sanity%2Fdist%2Fvisual-editing%2Fserver-actions.js%22%2C%5B%22revalidateRootLayout%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/page": "action-browser",
+        "app/portfolio/[slug]/page": "action-browser"
+      }
+    },
+    "c0dca267d1f85b23c3c7f41fc310e621aef4870d": {
+      "workers": {
+        "app/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fcho%2FDesktop%2F%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%80%E1%85%B5%E1%84%80%E1%85%A9%E1%86%BC%E1%84%89%E1%85%A1%E1%84%89%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3%2Fnode_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%2C%5B%22revalidateSyncTags%22%2C%22setPerspectiveCookie%22%5D%5D%2C%5B%22%2FUsers%2Fcho%2FDesktop%2F%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%80%E1%85%B5%E1%84%80%E1%85%A9%E1%86%BC%E1%84%89%E1%85%A1%E1%84%89%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3%2Fnode_modules%2Fnext-sanity%2Fdist%2Fvisual-editing%2Fserver-actions.js%22%2C%5B%22revalidateRootLayout%22%5D%5D%5D&__client_imported__=true!",
+        "app/portfolio/[slug]/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fcho%2FDesktop%2F%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%80%E1%85%B5%E1%84%80%E1%85%A9%E1%86%BC%E1%84%89%E1%85%A1%E1%84%89%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3%2Fnode_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%2C%5B%22revalidateSyncTags%22%2C%22setPerspectiveCookie%22%5D%5D%2C%5B%22%2FUsers%2Fcho%2FDesktop%2F%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%80%E1%85%B5%E1%84%80%E1%85%A9%E1%86%BC%E1%84%89%E1%85%A1%E1%84%89%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3%2Fnode_modules%2Fnext-sanity%2Fdist%2Fvisual-editing%2Fserver-actions.js%22%2C%5B%22revalidateRootLayout%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/page": "action-browser",
+        "app/portfolio/[slug]/page": "action-browser"
+      }
+    },
+    "5fa9498d888df3c254a4f40ac35f9826d347a120": {
+      "workers": {
+        "app/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fcho%2FDesktop%2F%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%80%E1%85%B5%E1%84%80%E1%85%A9%E1%86%BC%E1%84%89%E1%85%A1%E1%84%89%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3%2Fnode_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%2C%5B%22revalidateSyncTags%22%2C%22setPerspectiveCookie%22%5D%5D%2C%5B%22%2FUsers%2Fcho%2FDesktop%2F%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%80%E1%85%B5%E1%84%80%E1%85%A9%E1%86%BC%E1%84%89%E1%85%A1%E1%84%89%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3%2Fnode_modules%2Fnext-sanity%2Fdist%2Fvisual-editing%2Fserver-actions.js%22%2C%5B%22revalidateRootLayout%22%5D%5D%5D&__client_imported__=true!",
+        "app/portfolio/[slug]/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fcho%2FDesktop%2F%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%80%E1%85%B5%E1%84%80%E1%85%A9%E1%86%BC%E1%84%89%E1%85%A1%E1%84%89%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3%2Fnode_modules%2F%40sanity%2Fnext-loader%2Fdist%2Fserver-actions.js%22%2C%5B%22revalidateSyncTags%22%2C%22setPerspectiveCookie%22%5D%5D%2C%5B%22%2FUsers%2Fcho%2FDesktop%2F%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%80%E1%85%B5%E1%84%80%E1%85%A9%E1%86%BC%E1%84%89%E1%85%A1%E1%84%89%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%90%E1%85%B3%2Fnode_modules%2Fnext-sanity%2Fdist%2Fvisual-editing%2Fserver-actions.js%22%2C%5B%22revalidateRootLayout%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/page": "action-browser",
+        "app/portfolio/[slug]/page": "action-browser"
+      }
+    }
+  },
+  "edge": {},
+  "encryptionKey": "qOnUbdnVCGQNa17lboDedXH/9O8DxmmTDNspS0yvntc="
+}
