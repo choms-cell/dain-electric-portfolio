@@ -25,6 +25,33 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://hansol-elec.co.kr"}/#business`,
+  name: "다인전기",
+  description: "전국 전기공사 전문기업. 수변전 설비, 동력설비, 태양광, 소방전기 시공.",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://hansol-elec.co.kr",
+  telephone: "041-000-0000",
+  email: "info@dain-elec.co.kr",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "성환읍 산단로 123번길 45",
+    addressLocality: "천안시 서북구",
+    addressRegion: "충청남도",
+    addressCountry: "KR",
+  },
+  areaServed: "KR",
+  priceRange: "$$",
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "09:00",
+    closes: "18:00",
+  },
+  sameAs: [],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -32,6 +59,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body>{children}</body>
     </html>
   );

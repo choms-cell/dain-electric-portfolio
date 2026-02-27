@@ -28,6 +28,7 @@ export const portfolioBySlugQuery = `
     category,
     "coverImageUrl": coverImage.asset->url,
     "imageUrls": images[].asset->url,
+    "beforeImageUrl": beforeImage.asset->url,
     slug,
     publishedAt
   }

@@ -2,10 +2,15 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://hansol-elec.co.kr";
+
 export const metadata: Metadata = {
   title: "회사소개",
   description:
     "다인전기는 20년 이상의 전기공사 전문기업입니다. 수변전 설비부터 태양광까지, 신뢰와 기술로 최고의 시공을 제공합니다.",
+  alternates: {
+    canonical: `${SITE_URL}/about`,
+  },
 };
 
 const MILESTONES = [

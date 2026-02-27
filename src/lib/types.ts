@@ -7,6 +7,7 @@ export interface Portfolio {
   category: string;
   coverImageUrl: string;
   imageUrls?: string[];
+  beforeImageUrl?: string;
   slug: { current: string };
   publishedAt: string;
 }

@@ -1,11 +1,31 @@
 export const revalidate = 0;
 
+import type { Metadata } from "next";
 import Link from "next/link";
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://hansol-elec.co.kr";
+
+export const metadata: Metadata = {
+  title: "다인전기 | 전기공사 전문기업 시공 포트폴리오",
+  description:
+    "20년 이상의 전기공사 전문기업 다인전기. 수변전 설비, 동력설비, 태양광, 소방전기 등 전국 시공 실적을 확인하세요.",
+  alternates: {
+    canonical: SITE_URL,
+  },
+  openGraph: {
+    title: "다인전기 | 전기공사 전문기업",
+    description: "20년 이상의 전기공사 전문기업. 수변전 설비, 태양광, 소방전기 등 전국 시공.",
+    url: SITE_URL,
+  },
+};
+import dynamic from "next/dynamic";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import PortfolioCard from "@/components/PortfolioCard";
 import { getPortfolios } from "@/lib/queries";
+
+const ProjectMap = dynamic(() => import("@/components/ProjectMap"), { ssr: false });
 
 const SERVICES = [
   {
@@ -92,6 +112,27 @@ export default async function HomePage() {
               >
                 전체 포트폴리오 보기
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Map Section */}
+        <section className="border-b border-slate-200">
+          <div className="wrapper">
+            <div className="py-14 md:py-16 border-b border-slate-200">
+              <p className="label mb-3">Service Area</p>
+              <h2
+                className="font-bold text-slate-900 tracking-tighter"
+                style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)" }}
+              >
+                전국 시공 현장
+              </h2>
+              <p className="text-[13px] text-slate-500 mt-2">
+                전국 어디든 방문합니다. 지도에서 시공 지역을 확인하세요.
+              </p>
+            </div>
+            <div className="py-10">
+              <ProjectMap portfolios={portfolios} />
             </div>
           </div>
         </section>

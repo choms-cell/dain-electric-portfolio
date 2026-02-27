@@ -94,6 +94,15 @@ export const portfolioType = defineType({
       ],
     }),
     defineField({
+      name: "beforeImage",
+      title: "시공 전 이미지 (전/후 비교용)",
+      type: "image",
+      options: {
+        hotspot: true,
+      },
+      description: "업로드하면 상세 페이지에 시공 전·후 비교 슬라이더가 표시됩니다.",
+    }),
+    defineField({
       name: "slug",
       title: "URL (자동 생성)",
       type: "slug",

@@ -2,9 +2,15 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getPortfolioBySlug, getPortfolioSlugs } from "@/lib/queries";
+
+const BeforeAfterSlider = dynamic(
+  () => import("@/components/BeforeAfterSlider"),
+  { ssr: false }
+);
 
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://hansol-elec.co.kr";
@@ -26,7 +32,7 @@ export async function generateMetadata({
     title,
     description,
     openGraph: {
-      title: `${title} | 한솔전기`,
+      title: `${title} | 다인전기`,
       description,
       images: [
         {
