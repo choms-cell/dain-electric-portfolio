@@ -104,18 +104,54 @@ export const portfolioType = defineType({
     }),
     defineField({
       name: "slug",
-      title: "URL (자동 생성)",
+      title: "URL 슬러그 (자동 생성 후 수정 가능)",
       type: "slug",
+      description:
+        "아래 '자동 생성' 버튼을 누르세요. 영문 URL로 만들어집니다. 같은 지역·공종이 여러 건이면 끝에 -2, -3 추가.",
       options: {
-        source: (doc: any) =>
-          `${doc.region ?? ""}-${doc.district ?? ""}-${doc.category ?? ""}-전기공사`,
+        source: (doc: any) => {
+          const regionMap: Record<string, string> = {
+            서울: "seoul",
+            경기: "gyeonggi",
+            인천: "incheon",
+            부산: "busan",
+            대구: "daegu",
+            광주: "gwangju",
+            대전: "daejeon",
+            울산: "ulsan",
+            세종: "sejong",
+            강원: "gangwon",
+            충북: "chungbuk",
+            충남: "chungnam",
+            전북: "jeonbuk",
+            전남: "jeonnam",
+            경북: "gyeongbuk",
+            경남: "gyeongnam",
+            제주: "jeju",
+          };
+          const categoryMap: Record<string, string> = {
+            "수변전 설비": "substation",
+            동력설비: "motor-power",
+            조명설비: "lighting",
+            소방전기: "fire-electrical",
+            태양광: "solar",
+            약전설비: "low-voltage",
+            가로등: "street-light",
+            EV충전: "ev-charging",
+            기타: "general",
+          };
+          const region = regionMap[doc.region as string] ?? "korea";
+          const category = categoryMap[doc.category as string] ?? "electrical";
+          const year = new Date().getFullYear();
+          return `${region}-${category}-${year}`;
+        },
         slugify: (input: string) =>
           input
-            .replace(/\s+/g, "-")
-            .replace(/[^\w\-가-힣]/g, "")
             .toLowerCase()
+            .replace(/[^a-z0-9-]/g, "-")
+            .replace(/-+/g, "-")
+            .replace(/^-|-$/g, "")
             .slice(0, 96),
-        isUnique: () => true,
       },
       validation: (rule) => rule.required(),
     }),
