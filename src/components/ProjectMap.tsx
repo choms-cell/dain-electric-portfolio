@@ -2,7 +2,6 @@
 
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
-import Link from "next/link";
 import type { Portfolio } from "@/lib/types";
 import "leaflet/dist/leaflet.css";
 

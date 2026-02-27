@@ -131,38 +131,51 @@ export default async function PortfolioDetailPage({
             <div className="lg:col-span-2">
               {/* Meta tags */}
               <div className="flex flex-wrap items-center gap-2 mb-4">
-                <span className="px-2.5 py-1 bg-[#F0F0F0] text-[#444] text-[11px] font-semibold rounded-full">
+                <span className="px-2.5 py-1 bg-slate-100 text-slate-600 text-[11px] font-semibold">
                   {p.category}
                 </span>
-                <span className="px-2.5 py-1 bg-[#F0F0F0] text-[#444] text-[11px] font-semibold rounded-full">
+                <span className="px-2.5 py-1 bg-slate-100 text-slate-600 text-[11px] font-semibold">
                   {p.region} {p.district}
                 </span>
               </div>
 
               {/* Title */}
               <h1
-                className="font-extrabold text-[#111] leading-tight mb-4"
+                className="font-extrabold text-slate-900 leading-tight mb-4"
                 style={{ fontSize: "clamp(1.5rem, 3.5vw, 2.5rem)" }}
               >
                 {p.title}
               </h1>
 
               {/* Summary */}
-              <p className="text-[15px] text-[#555] leading-relaxed border-l-2 border-[#E8E8E8] pl-4 mb-10">
+              <p className="text-[15px] text-slate-500 leading-relaxed border-l-2 border-slate-200 pl-4 mb-10">
                 {p.summary}
               </p>
+
+              {/* Before/After Slider */}
+              {p.beforeImageUrl && (
+                <div className="mb-10">
+                  <h2 className="font-bold text-slate-900 text-[14px] mb-4 tracking-wide uppercase">
+                    시공 전 · 후 비교
+                  </h2>
+                  <BeforeAfterSlider
+                    beforeUrl={p.beforeImageUrl}
+                    afterUrl={p.coverImageUrl}
+                  />
+                </div>
+              )}
 
               {/* Image gallery */}
               {allImages.length > 1 && (
                 <div>
-                  <h2 className="font-bold text-[#111] text-[14px] mb-4 tracking-wide">
+                  <h2 className="font-bold text-slate-900 text-[14px] mb-4 tracking-wide uppercase">
                     시공 사진
                   </h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {allImages.map((url, i) => (
                       <div
                         key={i}
-                        className={`relative overflow-hidden bg-[#F0F0F0] rounded-sm ${
+                        className={`relative overflow-hidden bg-slate-100 ${
                           i === 0 ? "sm:col-span-2 aspect-[16/9]" : "aspect-[4/3]"
                         }`}
                       >
@@ -184,8 +197,8 @@ export default async function PortfolioDetailPage({
             <aside className="lg:col-span-1">
               <div className="sticky top-[88px]">
                 {/* Info card */}
-                <div className="border border-[#E8E8E8] rounded-sm p-5 mb-5">
-                  <h3 className="text-[11px] font-bold tracking-[0.15em] uppercase text-[#AAA] mb-4">
+                <div className="border border-slate-200 p-5 mb-5">
+                  <h3 className="text-[11px] font-bold tracking-[0.15em] uppercase text-slate-400 mb-4">
                     시공 정보
                   </h3>
                   <dl className="flex flex-col gap-3">
@@ -196,22 +209,22 @@ export default async function PortfolioDetailPage({
                       { label: "시공일", value: dateStr },
                     ].map(({ label, value }) => (
                       <div key={label} className="flex flex-col gap-0.5">
-                        <dt className="text-[11px] text-[#AAA] font-medium">{label}</dt>
-                        <dd className="text-[13px] font-semibold text-[#111]">{value}</dd>
+                        <dt className="text-[11px] text-slate-400 font-medium">{label}</dt>
+                        <dd className="text-[13px] font-semibold text-slate-900">{value}</dd>
                       </div>
                     ))}
                   </dl>
                 </div>
 
                 {/* CTA */}
-                <div className="bg-[#111] rounded-sm p-5 text-center">
+                <div className="bg-slate-900 p-5 text-center">
                   <p className="text-white/60 text-[12px] mb-1">이런 공사가 필요하신가요?</p>
                   <p className="text-white font-bold text-[15px] mb-4">
                     무료 견적 문의
                   </p>
                   <a
                     href="tel:041-000-0000"
-                    className="flex items-center justify-center gap-1.5 w-full py-3 bg-white text-[#111] font-bold text-[13px] rounded-sm hover:bg-white/90 transition-colors duration-200 mb-2"
+                    className="flex items-center justify-center gap-1.5 w-full py-3 bg-white text-slate-900 font-bold text-[13px] hover:bg-slate-100 transition-colors duration-200 mb-2"
                   >
                     <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
@@ -220,7 +233,7 @@ export default async function PortfolioDetailPage({
                   </a>
                   <Link
                     href="/contact"
-                    className="flex items-center justify-center w-full py-2.5 border border-white/20 text-white/70 font-medium text-[12px] rounded-sm hover:bg-white/5 transition-colors duration-200"
+                    className="flex items-center justify-center w-full py-2.5 border border-white/20 text-white/70 font-medium text-[12px] hover:bg-white/5 transition-colors duration-200"
                   >
                     온라인 문의
                   </Link>
@@ -229,7 +242,7 @@ export default async function PortfolioDetailPage({
                 {/* Back link */}
                 <Link
                   href="/portfolio"
-                  className="flex items-center gap-1.5 mt-5 text-[12px] text-[#AAA] hover:text-[#111] transition-colors duration-200"
+                  className="flex items-center gap-1.5 mt-5 text-[12px] text-slate-400 hover:text-slate-900 transition-colors duration-200"
                 >
                   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7" />

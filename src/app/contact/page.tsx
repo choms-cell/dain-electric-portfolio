@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import EstimateCalculator from "@/components/EstimateCalculator";
 
 const WORK_TYPES = [
   "수변전 설비",
@@ -236,6 +237,13 @@ export default function ContactPage() {
                 </form>
               )}
             </div>
+          </div>
+        </div>
+
+        {/* Estimate Calculator */}
+        <div className="border-t border-slate-200">
+          <div className="wrapper section">
+            <EstimateCalculator />
           </div>
         </div>
       </main>
