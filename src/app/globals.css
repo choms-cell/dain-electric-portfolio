@@ -5,12 +5,12 @@
 @tailwind utilities;
 
 :root {
-  --bg: #FFFFFF;
-  --fg: #111111;
-  --fg-2: #444444;
-  --fg-3: #888888;
-  --surface: #F7F7F7;
-  --border: #E8E8E8;
+  --bg: #f8fafc;
+  --fg: #0f172a;
+  --fg-2: #475569;
+  --fg-3: #94a3b8;
+  --surface: #f1f5f9;
+  --border: #e2e8f0;
 }
 
 * {
@@ -35,15 +35,15 @@ body {
 }
 
 ::selection {
-  background: #111;
+  background: #0f172a;
   color: #fff;
 }
 
 ::-webkit-scrollbar { width: 3px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #ddd; border-radius: 2px; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 2px; }
 
-*:focus-visible { outline: 2px solid #111; outline-offset: 2px; }
+*:focus-visible { outline: 2px solid #0f172a; outline-offset: 2px; }
 *:focus:not(:focus-visible) { outline: none; }
 
 @layer utilities {
@@ -54,6 +54,6 @@ body {
     @apply py-20 md:py-28 lg:py-36;
   }
   .label {
-    @apply text-[11px] font-semibold tracking-[0.18em] uppercase text-[#888];
+    @apply text-[11px] font-semibold tracking-[0.18em] uppercase text-slate-400;
   }
 }
