@@ -36,7 +36,10 @@ export async function generateMetadata({
       description,
       images: [
         {
-          url: p.coverImageUrl,
+          // 커버 이미지가 있으면 사용, 없으면 OG 자동생성 이미지
+          url: p.coverImageUrl
+            ? p.coverImageUrl
+            : `${SITE_URL}/api/og?title=${encodeURIComponent(p.title)}&category=${encodeURIComponent(p.category)}&region=${encodeURIComponent(p.region)}`,
           width: 1200,
           height: 630,
           alt: p.title,

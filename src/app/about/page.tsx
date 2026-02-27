@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FAQ from "@/components/FAQ";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://hansol-elec.co.kr";
 
@@ -106,10 +108,12 @@ export default function AboutPage() {
 
               {/* Image */}
               <div className="relative aspect-[4/3] lg:aspect-[3/4] overflow-hidden bg-slate-100 border border-slate-200 group">
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1590650516494-0c8e4a4dd67e?w=900&q=85"
                   alt="다인전기 현장"
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                  fill
+                  className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
             </div>
@@ -166,6 +170,79 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+
+        {/* Certifications */}
+        <section className="section bg-slate-50">
+          <div className="wrapper">
+            <p className="label mb-4">Certifications</p>
+            <h2
+              className="font-bold text-slate-900 tracking-tighter mb-10"
+              style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)" }}
+            >
+              인증 및 면허
+            </h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                {
+                  icon: (
+                    <svg className="w-8 h-8 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.2}
+                        d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                    </svg>
+                  ),
+                  title: "전기공사업 1종",
+                  sub: "면허 등록",
+                },
+                {
+                  icon: (
+                    <svg className="w-8 h-8 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.2}
+                        d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                    </svg>
+                  ),
+                  title: "ISO 9001",
+                  sub: "품질경영시스템",
+                },
+                {
+                  icon: (
+                    <svg className="w-8 h-8 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.2}
+                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                  ),
+                  title: "전기기사 14명",
+                  sub: "국가공인 자격보유",
+                },
+                {
+                  icon: (
+                    <svg className="w-8 h-8 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.2}
+                        d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                    </svg>
+                  ),
+                  title: "장관 표창",
+                  sub: "산업통상자원부 2020",
+                },
+              ].map((cert) => (
+                <div
+                  key={cert.title}
+                  className="flex flex-col items-center text-center p-6 bg-white border border-slate-200 gap-3"
+                >
+                  <div className="w-16 h-16 border border-slate-200 flex items-center justify-center">
+                    {cert.icon}
+                  </div>
+                  <div>
+                    <div className="font-bold text-slate-900 text-[14px]">{cert.title}</div>
+                    <div className="text-[11px] text-slate-400 mt-0.5">{cert.sub}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <FAQ />
       </main>
       <Footer />
     </>

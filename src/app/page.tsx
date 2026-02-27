@@ -23,6 +23,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import PortfolioCard from "@/components/PortfolioCard";
+import FAQ from "@/components/FAQ";
 import { getPortfolios } from "@/lib/queries";
 
 const ProjectMap = dynamic(() => import("@/components/ProjectMap"), { ssr: false });
@@ -32,16 +33,37 @@ const SERVICES = [
     number: "01",
     title: "수변전 설비",
     desc: "변전소·수배전반 설계·시공부터 유지보수까지. 안정적인 전력 공급을 책임집니다.",
+    icon: (
+      <svg className="w-8 h-8 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.2}
+          d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+    ),
+    tags: ["수배전반", "변압기", "케이블 포설", "유지보수"],
   },
   {
     number: "02",
     title: "동력·조명설비",
-    desc: "산업용 동력 설비와 고효율 LED 조명 시스템 전문 시공.",
+    desc: "산업용 동력 설비와 고효율 LED 조명 시스템 전문 시공. 에너지 절감 설계를 제공합니다.",
+    icon: (
+      <svg className="w-8 h-8 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.2}
+          d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+      </svg>
+    ),
+    tags: ["동력반", "LED 조명", "분전반", "에너지 절감"],
   },
   {
     number: "03",
     title: "태양광·신재생",
-    desc: "주택·산업용 태양광 발전 설계·시공·O&M 원스톱 서비스.",
+    desc: "주택·산업용 태양광 발전 설계·시공·O&M 원스톱 서비스. REC·SMP 컨설팅도 함께.",
+    icon: (
+      <svg className="w-8 h-8 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.2}
+          d="M12 3v1m0 16v1M4.22 4.22l.707.707m12.02 12.02l.707.707M1 12h1m20 0h1M4.22 19.78l.707-.707M18.95 5.05l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+      </svg>
+    ),
+    tags: ["태양광 패널", "인버터", "O&M", "계통연계"],
   },
 ];
 
@@ -67,11 +89,22 @@ export default async function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-200">
               {SERVICES.map((s) => (
                 <div key={s.number} className="py-10 md:py-12 md:px-8 first:md:pl-0 last:md:pr-0">
-                  <span className="block text-[11px] font-bold tracking-[0.15em] text-slate-300 mb-5">
+                  <div className="mb-5">{s.icon}</div>
+                  <span className="block text-[11px] font-bold tracking-[0.15em] text-slate-300 mb-3">
                     {s.number}
                   </span>
                   <h3 className="font-bold text-slate-900 text-[18px] mb-3">{s.title}</h3>
-                  <p className="text-[13px] text-slate-500 leading-relaxed">{s.desc}</p>
+                  <p className="text-[13px] text-slate-500 leading-relaxed mb-5">{s.desc}</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {s.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2.5 py-1 text-[10px] font-semibold tracking-wide border border-slate-200 text-slate-400"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
@@ -137,6 +170,9 @@ export default async function HomePage() {
           </div>
         </section>
 
+        {/* FAQ */}
+        <FAQ />
+
         {/* CTA Banner */}
         <section className="bg-slate-900 py-16 md:py-20">
           <div className="wrapper">
@@ -154,7 +190,7 @@ export default async function HomePage() {
               </div>
               <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
                 <a
-                  href="tel:041-000-0000"
+                  href="tel:041-000-0000" /* TODO: 실제 전화번호로 교체 */
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-slate-900 font-bold text-[13px] hover:bg-slate-100 transition-colors duration-200"
                 >
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
