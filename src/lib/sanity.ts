@@ -20,6 +20,7 @@ export function getSanityClient() {
   return _client;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function urlFor(source: any) {
   return imageUrlBuilder(getSanityClient()).image(source);
 }
